@@ -1,14 +1,15 @@
 #include <iostream>
 #include "EosEngine.h"
+#include "EOSLogger.h"
 
 int main(int argc, char* argv[])
 {
 	EosEngine App;
 	int errorCode = App.GetErrorCode();
 	if (errorCode != 0)
-		std::printf("Error");
+		ELOG << "Error initializing";
 	else
-		std::printf("Successful Initialization");
+		MLOG << "Successful Initialization";
 	bool running = true;
 	while (running)
 	{
